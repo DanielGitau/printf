@@ -11,7 +11,7 @@ int put_digit(long long num)
 
 	if (num < 0)
 	{
-		_putchar('-');
+		putchr('-');
 		num = -(num);
 		num_digit++;
 	}
@@ -20,7 +20,7 @@ int put_digit(long long num)
 		num_digit += put_digit(num / 10);
 
 	n = num % 10;
-	_putchar(n + '0');
+	putchr(n + '0');
 	num_digit++;
 
 	return (num_digit);

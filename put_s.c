@@ -13,7 +13,7 @@ int put_s(char *str)
 
 		while (str[i] != '\0')
 		{
-			_putchar(str[i]);
+			putchr(str[i]);
 			r_value += 1;
 			i++;
 		}
