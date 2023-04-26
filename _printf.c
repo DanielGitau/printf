@@ -27,13 +27,13 @@ int _printf(const char *format, ...)
 		}
 		else if (format[h + 1] == 'd' || format[h + 1] == 'i')
 		{
-			r_value1 = put_digit(va_arg(args, int));
+			r_value1 = print_digit(va_arg(args, int));
 			r_value += (r_value1 - 1);
 			h++;
 		}
 		else if (format[h + 1] == 's')
 		{
-			r_value2 = put_s(va_arg(args, char *));
+			r_value2 = print_str(va_arg(args, char *));
 			r_value += (r_value2 - 1);
 			h++;
 		}

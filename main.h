@@ -5,8 +5,8 @@
 #include <unistd.h>
 
 /*function prototypes*/
-int put_digit(long long num);
-int putstr(char *str);
+int print_digit(long long num);
+int print_str(char *str);
 int put_s(char *str);
 int _printf(const char *format, ...);
 void _putchar(char c);
