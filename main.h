@@ -1,11 +1,12 @@
 #ifndef MAIN_H
 #define MAIN_H
+#define _ISOC99_SOURCE
 /* standard library header files*/
 #include <stdarg.h>
 #include <unistd.h>
 
 /*function prototypes*/
-int put_digit(long long num);
+/*int put_digit(long long num);*/
 int putstr(char *str);
 int put_digits(int num);
 int put_s(char *str);
