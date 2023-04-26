@@ -11,10 +11,10 @@ int putstr(char *str)
 
 	while (str[i] != '\0')
 	{
-		putchr(str[i]);
+		_putchar(str[i]);
 		r_value++;
 		i++;
 	}
-	putchr('\n');
+	_putchar('\n');
 	return (r_value);
 }
