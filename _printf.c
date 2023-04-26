@@ -18,11 +18,11 @@ int _printf(const char *format, ...)
 	{
 		if (format[h] != '%')
 		{
-			_putchar(format[h]);
+			putchr(format[h]);
 		}
 		else if (format[h + 1] == 'c')
 		{
-			_putchar(va_arg(args, int));
+			putchr(va_arg(args, int));
 			h++;
 		}
 		else if (format[h + 1] == 'd' || format[h + 1] == 'i')
@@ -39,10 +39,10 @@ int _printf(const char *format, ...)
 		}
 		else if (format[h + 1] == '%')
 		{
-			_putchar('%');
+			putchr('%');
 			h++;
 		}
-		r_value++;
+		r_value += 1;
 	}
 
 	return (r_value);

@@ -8,11 +8,15 @@ int put_s(char *str)
 {
 	int i = 0, r_value = 0;
 
-	while (str[i] != '\0')
+	if (str)
 	{
-		_putchar(str[i]);
-		r_value++;
-		i++;
+
+		while (str[i] != '\0')
+		{
+			_putchar(str[i]);
+			r_value += 1;
+			i++;
+		}
 	}
 
 	return (r_value);
