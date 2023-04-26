@@ -19,34 +19,44 @@ int _printf(const char *format, ...)
 
 	for (; format[h] != '\0'; h++)
 	{
-		if (format[h] != '%')
+		if (format[h] == '%')
+		{
+			if (format[h + 1] == 'c')
+			{
+				_putchar(va_arg(args, int));
+				h++;
+				r_value++;
+			}
+			else if (format[h + 1] == 'd' || format[h + 1] == 'i')
+			{
+				r_value1 = print_digit(va_arg(args, int));
+				r_value += (r_value1 - 1);
+				h++;
+			}
+			else if (format[h + 1] == 's')
+			{
+				r_value2 = print_str(va_arg(args, char *));
+				r_value += (r_value2 - 1);
+				h++;
+			}
+			else if (format[h + 1] == '%')
+			{
+				_putchar('%');
+				h++;
+				r_value++;
+			}
+			else
+			{
+				_putchar(format[h]);
+				r_value++;
+			}
+		}
+		else
 		{
 			_putchar(format[h]);
+			r_value++;
 		}
-		else if (format[h + 1] == 'c')
-		{
-			_putchar(va_arg(args, int));
-			h++;
-		}
-		else if (format[h + 1] == 'd' || format[h + 1] == 'i')
-		{
-			r_value1 = print_digit(va_arg(args, int));
-			r_value += (r_value1 - 1);
-			h++;
-		}
-		else if (format[h + 1] == 's')
-		{
-			r_value2 = print_str(va_arg(args, char *));
-			r_value += (r_value2 - 1);
-			h++;
-		}
-		else if (format[h + 1] == '%')
-		{
-			_putchar('%');
-			h++;
-		}
-		r_value++;
 	}
 
-	return (r_value);
+		return (r_value);
 }
