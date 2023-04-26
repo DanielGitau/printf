@@ -4,7 +4,7 @@
  * @num: the int to be formatted
  * Return: the num of int outputted
  **/
-int put_digit(long long num)
+int put_digit(int num)
 {
 	int n = 0;
 	int num_digit = 0;

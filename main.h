@@ -5,6 +5,7 @@
 #include <unistd.h>
 
 /*function prototypes*/
+
 int print_digit(long long num);
 int print_str(char *str);
 int put_s(char *str);
