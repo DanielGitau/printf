@@ -17,7 +17,7 @@ int print_digit(long long num)
 	}
 
 	if (num >= 10)
-		num_digit += put_digit(num / 10);
+		num_digit += print_digit(num / 10);
 
 	n = num % 10;
 	_putchar(n + '0');
