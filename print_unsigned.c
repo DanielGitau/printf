@@ -1,10 +1,10 @@
 #include "main.h"
 /**
- * print_digit - handles the int format specifier
+ * print_unsigned - handles the int format specifier
  * @num: the int to be formatted
  * Return: the num of int outputted
 g **/
-int print_digit(long int num)
+int print_unsigned(long int num)
 {
 	int digit, temp, count, end, expo;
 

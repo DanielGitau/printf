@@ -7,7 +7,7 @@
 int _printf(const char *format, ...)
 {
 	/*variables for return values*/
-	unsigned int r_value = 0, r_value1 = 0, r_value2 = 0;
+	unsigned int r_value = 0, r_value1 = 0, r_value2 = 0, r_value3 = 0;
 	int h = 0;
 
 	va_list args;
@@ -44,6 +44,12 @@ int _printf(const char *format, ...)
 				_putchar('%');
 				h++;
 				r_value++;
+			}
+			else if (format[h + 1] == 'b')
+			{
+				r_value3 = print_bin(va_arg(args, unsigned int));
+				r_value += r_value3;
+				h++;
 			}
 			else
 			{
