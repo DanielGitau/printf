@@ -10,7 +10,7 @@ int print_unsigned(long int num)
 
 	expo = 1;
 	count = 0;
-	
+
 	if (num < 0)
 	{
 		_putchar('-');
@@ -21,7 +21,7 @@ int print_unsigned(long int num)
 	end = num % 10;
 	num = num / 10;
 	temp = num;
-	
+
 	if (temp > 0)
 	{
 		while (temp / 10 != 0)
@@ -43,5 +43,5 @@ int print_unsigned(long int num)
 	_putchar(end + '0');
 	count++;
 
-	return(count);
+	return (count);
 }
