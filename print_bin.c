@@ -4,8 +4,9 @@
  * @num: the argument to be converted
  * Return: the count of elem printed
  **/
-int print_bin(unsigned int num)
+int print_bin(va_list args)
 {
+	unsigned int num = va_arg(args, unsigned int);
 	unsigned int max, i, sum;
 	unsigned int arr[32];
 	int count;
