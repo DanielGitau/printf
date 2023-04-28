@@ -2,7 +2,7 @@
 
 /**
  * print_pointer - prints a memory address
- * @val: The arguments.
+ * @ptr: Pointer.
  * Return: count
  */
 
@@ -13,11 +13,12 @@ int print_pointer(void *ptr)
 	int d;
 	int j;
 
-	if (ptr = NULL)
+	if (ptr == NULL)
 	{
-		for (j = 0; str[j] != '\0'; j++)
+		while (str[j] != '\0')
 		{
 			_putchar(str[j]);
+			j++;
 		}
 		return (j);
 	}
