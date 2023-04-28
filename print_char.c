@@ -1,17 +1,11 @@
 #include "main.h"
-
 /**
- * print_char - print char.
- * @val: The arguments.
- * Return: success
- */
-
-int print_char(va_list val)
+ * print_percent - prints the %.
+ * Return: 1
+ **/
+int print_percent(void)
 {
-	char k;
 	int count = 1;
-
-	k = va_arg(val, int);
-	_putchar(k);
+	_putchar('%');
 	return (count);
 }

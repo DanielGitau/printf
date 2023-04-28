@@ -1,4 +1,3 @@
-
 #ifndef MAIN_H
 #define MAIN_H
 
@@ -9,6 +8,9 @@
 #include <unistd.h>
 
 /*function prototypes*/
+
+int print_Str(char *str);
+int print_Hexa_helper(unsigned int num);
 int print_Hexa(unsigned int num);
 int print_hexa(unsigned int num);
 int print_oct (unsigned int num);
