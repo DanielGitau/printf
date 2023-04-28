@@ -3,7 +3,7 @@
  *print_bin - Converts unsigned int to binary
  *return: The number of digits outputed
  */
-int print_bin(unsigned int num)
+int print_bin(unsigned long num)
 {
 	int count = 0;
 
