@@ -5,9 +5,8 @@
  * Return: the num of char outputted
  **/
 
-int print_str(va_list args)
+int print_str(char *str)
 {
-	char *str = va_arg(args, char *);
 	int i = 0, r_value = 0;
 
 	if (str == NULL)

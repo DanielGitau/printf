@@ -6,17 +6,9 @@
  **/
 int _printf(const char *format, ...)
 {
-	convertType s[] = {
-		{"%c", print_char}, {"%d", print_digit},
-		{"%i", print_int}, {"%u", print_unsigned},
-		{"%s", print_str}, {"%%", print_percent},
-		{"%b", print_bin}, {"%o", print_oct},
-		{"%x", print_hexa}, {"%X", print_Hexa}
-	};
-	
 	/*variables for return values*/
-	unsigned int r_value = 0;
-	int h = 0, k;
+	unsigned int r_value = 0, r_value1 = 0, r_value2 = 0, r_value3 = 0;
+	int h = 0;
 
 	va_list args;
 
@@ -24,23 +16,46 @@ int _printf(const char *format, ...)
 
 	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 		return (-1);
+
 	for (; format[h] != '\0'; h++)
 	{
 		if (format[h] == '%')
 		{
-			k = 9;
-			while ( k >= 0)
+			if (format[h + 1] == 'c')
 			{
-				if (s[k].op[1] == format[h + 1])
-				{
-					r_value += s[k].f(args);
-					h += 2;
-					break;
-				}
-				k--;
+				_putchar(va_arg(args, int));
+				h++;
+				r_value++;
 			}
-			_putchar(format[h]);
-			r_value++;
+			else if (format[h + 1] == 'd' || format[h + 1] == 'i')
+			{
+				r_value1 = print_digit(va_arg(args, int));
+				r_value += r_value1;
+				h++;
+			}
+			else if (format[h + 1] == 's')
+			{
+				r_value2 = print_str(va_arg(args, char *));
+				r_value += r_value2;
+				h++;
+			}
+			else if (format[h + 1] == '%')
+			{
+				_putchar('%');
+				h++;
+				r_value++;
+			}
+			else if (format[h + 1] == 'b')
+			{
+				r_value3 = print_bin(va_arg(args, unsigned int));
+				r_value += r_value3;
+				h++;
+			}
+			else
+			{
+				_putchar(format[h]);
+				r_value++;
+			}
 		}
 		else
 		{
@@ -48,7 +63,6 @@ int _printf(const char *format, ...)
 			r_value++;
 		}
 	}
-	va_end(args);
 
-	return (r_value);
+		return (r_value);
 }
