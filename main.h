@@ -15,5 +15,8 @@ int put_s(char *str);
 int _printf(const char *format, ...);
 void _putchar(char c);
 int print_bin(unsigned int num);
+int print_hexa(va_list val);
+int print_Hexa(va_list val);
+int print_char(va_list val);
 
 #endif
