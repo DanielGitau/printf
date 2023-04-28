@@ -26,9 +26,9 @@ int _printf(const char *format, ...)
 		return (-1);
 	for (; format[h] != '\0'; h++)
 	{
-		k = 9;
 		if (format[h] == '%')
 		{
+			k = 9;
 			while ( k >= 0)
 			{
 				if (s[k].op[1] == format[h + 1])
