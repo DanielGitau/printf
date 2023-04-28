@@ -20,7 +20,8 @@ typedef struct specifier
 } convertType;
 
 /*function prototypes*/
-
+int print_unsigned(va_list args);
+int print_int(va_list args);
 int print_digit(va_list args);
 int print_str(va_list args);
 int put_s(char *str);

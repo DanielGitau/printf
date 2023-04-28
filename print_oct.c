@@ -6,16 +6,17 @@
  **/
 int print_oct (va_list value)
 {
-	int i, num, count = 0, tmp;
-	char *digits;
+	int i, count = 0;
+	int *digits;
 
-	num = va_arg(value, int);
-	tmp = num;
-	if (num > 0)
+	unsigned int num = va_arg(value, int);
+	unsigned int tmp = num;
+	while (num / 8 != 0)
 	{
 		num /= 8;
 		count++;
 	}
+	count++;
 
 	digits = malloc(count * sizeof(int));
 

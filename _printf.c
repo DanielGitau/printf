@@ -8,15 +8,15 @@ int _printf(const char *format, ...)
 {
 	convertType s[] = {
 		{"%c", print_char}, {"%d", print_digit},
-		{"%i", print_digit}, {"%u", print_digit},
+		{"%i", print_int}, {"%u", print_unsigned},
 		{"%s", print_str}, {"%%", print_percent},
-		{"%b", print_bin}, {"%o", print_oct}
-		/*{"%h", print_hexa}, {"%H", print_Hexa}*/
+		{"%b", print_bin}, {"%o", print_oct},
+		{"%x", print_hexa}, {"%X", print_Hexa}
 	};
 	
 	/*variables for return values*/
 	unsigned int r_value = 0;
-	int h = 0, k = 7;
+	int h = 0, k;
 
 	va_list args;
 
@@ -24,9 +24,9 @@ int _printf(const char *format, ...)
 
 	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 		return (-1);
-
 	for (; format[h] != '\0'; h++)
 	{
+		k = 9;
 		if (format[h] == '%')
 		{
 			while ( k >= 0)
@@ -50,5 +50,5 @@ int _printf(const char *format, ...)
 	}
 	va_end(args);
 
-		return (r_value);
+	return (r_value);
 }
