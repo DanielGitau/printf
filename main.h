@@ -14,6 +14,6 @@ int print_str(char *str);
 int put_s(char *str);
 int _printf(const char *format, ...);
 void _putchar(char c);
-int print_bin(unsigned long num);
+int print_bin(unsigned int num);
 
 #endif

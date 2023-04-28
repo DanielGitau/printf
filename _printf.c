@@ -47,7 +47,7 @@ int _printf(const char *format, ...)
 			}
 			else if (format[h + 1] == 'b')
 			{
-				r_value3 = print_bin(va_arg(args, unsigned long));
+				r_value3 = print_bin(va_arg(args, unsigned int));
 				r_value += r_value3;
 				h++;
 			}
