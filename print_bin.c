@@ -11,7 +11,7 @@ int print_bin(unsigned int num)
 	int count;
 
 	max = 2147483648;
-	arr[0] = num / m;
+	arr[0] = num / max;
 
 	for (i = 1; i < 32; i++)
 	{
