@@ -21,10 +21,12 @@ int print_Hexa_helper(unsigned int num)
 	count++;
 	arr = malloc(count * sizeof(int));
 
-	for (p = 0; p < count; p++)
+	p = 0;
+	while (p < count)
 	{
 		arr[p] = tmp % 16;
 		tmp /= 16;
+		p++;
 	}
 	for (p = count - 1; p >= 0; p--)
 	{
