@@ -2,16 +2,15 @@
 
 /**
  * print_Hexa - Function prints hexadecimal lower case.
- * @val: The arguments.
+ * @num: The arguments.
  * Return: count.
  */
 
-int print_Hexa(va_list val)
+int print_Hexa(unsigned int num)
 {
 	int p;
 	int *arr;
 	int count = 0;
-	unsigned int num = va_arg(val, unsigned int);
 	unsigned int tmp = num;
 
 	while (num / 16 != 0)
@@ -36,5 +35,3 @@ int print_Hexa(va_list val)
 	free(arr);
 	return (count);
 }
-
-

@@ -7,7 +7,7 @@
 int _printf(const char *format, ...)
 {
 	/*variables for return values*/
-	unsigned int r_value = 0, r_value1 = 0, r_value2 = 0, r_value3 = 0;
+	unsigned int r_value = 0;
 	int h = 0;
 
 	va_list args;
@@ -29,14 +29,12 @@ int _printf(const char *format, ...)
 			}
 			else if (format[h + 1] == 'd' || format[h + 1] == 'i')
 			{
-				r_value1 = print_digit(va_arg(args, int));
-				r_value += r_value1;
+				r_value += print_digit(va_arg(args, int));
 				h++;
 			}
 			else if (format[h + 1] == 's')
 			{
-				r_value2 = print_str(va_arg(args, char *));
-				r_value += r_value2;
+				r_value +=  print_str(va_arg(args, char *));
 				h++;
 			}
 			else if (format[h + 1] == '%')
@@ -47,8 +45,27 @@ int _printf(const char *format, ...)
 			}
 			else if (format[h + 1] == 'b')
 			{
-				r_value3 = print_bin(va_arg(args, unsigned int));
-				r_value += r_value3;
+				r_value += print_bin(va_arg(args, unsigned int));
+				h++;
+			}
+			else if (format[h + 1] == 'u')
+			{
+				r_value += print_unsigned(va_arg(args, unsigned int));
+				h++;
+			}
+			else if (format[h + 1] == 'o')
+			{
+				r_value += print_oct(va_arg(args, unsigned int));
+				h++;
+			}
+			else if (format[h + 1] == 'x')
+			{
+				r_value += print_hexa(va_arg(args, unsigned int));
+				h++;
+			}
+			else if (format[h + 1] == 'X')
+			{
+				r_value += print_Hexa(va_arg(args, unsigned int));
 				h++;
 			}
 			else

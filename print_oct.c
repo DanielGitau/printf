@@ -1,16 +1,15 @@
 #include "main.h"
 /**
  * print_oct - outputs base 8 num
- * @value: args to be formatted
+ * @num: args to be formatted
  * Return: count of digit outputted
  **/
-int print_oct (va_list value)
+int print_oct (unsigned int num)
 {
 	int i, count = 0;
 	int *digits;
-
-	unsigned int num = va_arg(value, int);
 	unsigned int tmp = num;
+	
 	while (num / 8 != 0)
 	{
 		num /= 8;

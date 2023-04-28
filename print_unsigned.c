@@ -1,12 +1,11 @@
 #include "main.h"
 /**
  * print_unsigned - handles the int format specifier
- * @args: the int to be formatted
+ * @num: the int to be formatted
  * Return: the num of int outputted
 g **/
-int print_unsigned(va_list args)
+int print_unsigned(unsigned int num)
 {
-	unsigned int num = va_arg(args, unsigned int);
 	int digit, temp, count, end, expo;
 
 	expo = 1;

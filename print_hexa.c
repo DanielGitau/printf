@@ -6,12 +6,11 @@
  * Return: count.
  */
 
-int print_hexa(va_list val)
+int print_hexa(unsigned int num)
 {
 	int p;
 	int *arr;
 	int count = 0;
-	unsigned int num = va_arg(val, unsigned int);
 	unsigned int tmp = num;
 
 	while (num / 16 != 0)
