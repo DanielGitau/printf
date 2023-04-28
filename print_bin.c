@@ -6,28 +6,25 @@
  **/
 int print_bin(unsigned int num)
 {
-	unsigned int m, i, sum;
-	unsigned int a[32];
+	unsigned int max, i, sum;
+	unsigned int arr[32];
 	int count;
-	char z;
 
-	m = 2147483648;
-	a[0] = num / m;
+	max = 2147483648;
+	arr[0] = num / m;
 
 	for (i = 1; i < 32; i++)
 	{
-		m /= 2;
-		a[i] = (num / m) % 2;
+		max /= 2;
+		arr[i] = (num / max) % 2;
 	}
 
 	for (i = 0, sum = 0, count = 0; i < 32; i++)
 	{
-		sum += a[i];
+		sum += arr[i];
 		if (sum || i == 31)
 		{
-			z = '0' + a[i];
-
-			write(1, &z, 1);
+			_putchar('0' + arr[i]);
 			count++;
 		}
 	}
