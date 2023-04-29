@@ -73,6 +73,11 @@ int _printf(const char *format, ...)
 					r_value += print_pointer(va_arg(args, void *));
 					h++;
 				}
+			else if (format[h + 1] == 'S')
+			{
+				r_value += print_Str(va_arg(args, char *));
+				h++;
+			}
 			else
 			{
 				_putchar(format[h]);

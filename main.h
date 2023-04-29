@@ -8,6 +8,8 @@
 #include <unistd.h>
 
 /*function prototypes*/
+int print_Str(char *str);
+int print_Hexa_helper(unsigned int num);
 int print_hexa_helper(unsigned long int num);
 int print_pointer(void *ptr);
 int print_Hexa(unsigned int num);
