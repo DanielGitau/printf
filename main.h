@@ -9,8 +9,6 @@
 
 /*function prototypes*/
 
-int print_Str(char *str);
-int print_Hexa_helper(unsigned int num);
 int print_Hexa(unsigned int num);
 int print_hexa(unsigned int num);
 int print_oct (unsigned int num);
@@ -21,7 +19,5 @@ int put_s(char *str);
 int _printf(const char *format, ...);
 void _putchar(char c);
 int print_bin(unsigned int num);
-int print_hexa_helper(unsigned long int num);
-int print_pointer(void *ptr);
 
 #endif

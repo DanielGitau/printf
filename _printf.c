@@ -68,6 +68,11 @@ int _printf(const char *format, ...)
 				r_value += print_Hexa(va_arg(args, unsigned int));
 				h++;
 			}
+			else
+			{
+				_putchar(format[h]);
+				r_value++;
+			}
 		}
 		else
 		{
@@ -75,6 +80,5 @@ int _printf(const char *format, ...)
 			r_value++;
 		}
 	}
-
-		return (r_value);
+	return (r_value);
 }
