@@ -11,7 +11,7 @@
 
 int print_Hexa(unsigned int num);
 int print_hexa(unsigned int num);
-int print_oct (unsigned int num);
+int print_oct(unsigned int num);
 int print_unsigned(unsigned int num);
 int print_digit(long int num);
 int print_str(char *str);
